@@ -69,7 +69,12 @@ def _post_action(session, post, **kw):
             post_id = _post_id(post)
         except ValueError:
             return None
-    data = _action(session, post_id=post_id, **kw)
+    
+    try:
+        data = _action(session, post_id=post_id, **kw)
+    except:
+        return None
+        
     if data is None:
         return None
     else:
