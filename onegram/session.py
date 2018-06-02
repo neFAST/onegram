@@ -116,7 +116,7 @@ class _BaseSession(Session):
         @retry(**retry_kw)
         def _request():
             with self.rate_limiter:
-                self.logger.info(f'{method} "{url}"')
+                self.logger.debug(f'{method} "{url}"')
                 response = self._requests.request(method, url, *a, **kw)
                 return validate_response(self, response)
 

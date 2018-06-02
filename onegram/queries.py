@@ -157,4 +157,4 @@ def _iter_progress(session, data, progress):
     progress['count'] = count
 
     msg = f'FETCH {fetched} :: [{count}/{total}] - {count/(total or 1):.0%}'
-    session.logger.info(msg)
+    session.logger.debug(msg)
